@@ -85,9 +85,8 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
                 
                 std::shared_ptr<ApplicationViewTitleBar> appView = std::make_shared<ApplicationViewTitleBar>(ApplicationView::GetForCurrentView().TitleBar());
                 appView->ButtonBackgroundColor(Windows::UI::Colors::Transparent());
-                appView->ButtonForegroundColor(Windows::UI::Colors::Black());
-                                            
-                //std::shared_ptr<ApplicationViewTitleBar> titleBar = 
+                appView->ButtonForegroundColor(Windows::UI::Colors::White());
+                
 
             }
             // Place the frame in the current Window

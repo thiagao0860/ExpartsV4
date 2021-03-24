@@ -1,0 +1,9 @@
+namespace ExpartsV4
+{
+    [default_interface]
+    runtimeclass TitleBar : Windows.UI.Xaml.Controls.Page
+    {
+        TitleBar();
+        Int32 MyProperty;
+    }
+}
