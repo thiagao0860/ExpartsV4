@@ -12,15 +12,6 @@ namespace winrt::ExpartsV4::implementation
     {
         InitializeComponent();
     }
-
-    int32_t MainPage::MyProperty()
-    {
-        return int32_t();
-    }
-    void MainPage::MyProperty(int32_t value)
-    {
-    }
-
    
     void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
     {

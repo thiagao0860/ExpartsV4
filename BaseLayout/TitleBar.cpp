@@ -13,13 +13,7 @@ namespace winrt::ExpartsV4::implementation
     {
         InitializeComponent();
     }
-    int32_t TitleBar::MyProperty()
-    {
-        return int32_t();
-    }
-    void TitleBar::MyProperty(int32_t value)
-    {
-    }
+    //
     void TitleBar::ClickHandler(IInspectable const&, RoutedEventArgs const&)
     {
         //myButton().Content(box_value(L"Clicked"));
