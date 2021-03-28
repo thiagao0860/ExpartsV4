@@ -11,8 +11,11 @@
         <NavigationView x:Name="NavView" Background="Transparent" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked" Loaded="NavView_Loaded">
 
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Home">
-                    Pagina Inicial
+                <NavigationViewItem x:Name="home_navigation" Icon="Home">
+                    Home
+                </NavigationViewItem>
+                <NavigationViewItem x:Name="monitor_navigation" Icon="Manage">
+                    Monitor Real Time
                 </NavigationViewItem>
             </NavigationView.MenuItems>
             <Grid>

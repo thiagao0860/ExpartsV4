@@ -3,9 +3,6 @@
 #include "App.h"
 #include "MainPage.h"
 
-#include <winrt/Windows.ApplicationModel.Core.h>
-#include <winrt/Windows.UI.ViewManagement.h>
-
 using namespace winrt;
 using namespace Windows::ApplicationModel;
 using namespace Windows::ApplicationModel::Core;
