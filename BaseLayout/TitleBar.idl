@@ -1,0 +1,9 @@
+//#include "../Generated Files/BaseLayout/TitleBar.xaml.g.h"
+namespace ExpartsV4
+{
+    [default_interface]
+    runtimeclass TitleBar : Windows.UI.Xaml.Controls.Page
+    {
+        TitleBar();
+    }
+}

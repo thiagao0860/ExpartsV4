@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShowAllFiles>true</ShowAllFiles>
+    <UapAppxPackageBuildMode>SideloadOnly</UapAppxPackageBuildMode>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x64</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
+    <Source>C:\Users\Thiago\source\repos\ExpartsV4\ExpartsV4\PreparedImages\main-icon-dark.png</Source>
+    <SmallTileSource>C:\Users\Thiago\source\repos\ExpartsV4\ExpartsV4\PreparedImages\main-icon-dark.png</SmallTileSource>
+    <MediumTileSource>C:\Users\Thiago\source\repos\ExpartsV4\ExpartsV4\PreparedImages\main-icon-dark.png</MediumTileSource>
+    <WideTileSource>C:\Users\Thiago\source\repos\ExpartsV4\ExpartsV4\PreparedImages\main-icon-dark.png</WideTileSource>
+    <LargeTileSource>C:\Users\Thiago\source\repos\ExpartsV4\ExpartsV4\PreparedImages\main-icon-dark.png</LargeTileSource>
+    <AppIconSource>C:\Users\Thiago\source\repos\ExpartsV4\ExpartsV4\PreparedImages\main-icon-dark.png</AppIconSource>
+    <SplashScreenSource>C:\Users\Thiago\source\repos\ExpartsV4\ExpartsV4\PreparedImages\main-icon-dark.png</SplashScreenSource>
+    <PackageLogoSource>C:\Users\Thiago\source\repos\ExpartsV4\ExpartsV4\PreparedImages\main-icon-dark.png</PackageLogoSource>
+    <BadgeLogoSource>C:\Users\Thiago\source\repos\ExpartsV4\ExpartsV4\PreparedImages\main-icon-dark.png</BadgeLogoSource>
+  </PropertyGroup>
+</Project>

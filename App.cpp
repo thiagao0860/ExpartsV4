@@ -3,8 +3,6 @@
 #include "App.h"
 #include "MainPage.h"
 
-#include <winrt/Windows.ApplicationModel.Core.h>
-
 using namespace winrt;
 using namespace Windows::ApplicationModel;
 using namespace Windows::ApplicationModel::Core;
@@ -13,6 +11,7 @@ using namespace Windows::Foundation;
 using namespace Windows::UI::Xaml;
 using namespace Windows::UI::Xaml::Controls;
 using namespace Windows::UI::Xaml::Navigation;
+using namespace Windows::UI::ViewManagement;
 using namespace ExpartsV4;
 using namespace ExpartsV4::implementation;
 
@@ -76,9 +75,16 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
                 // parameter
                 rootFrame.Navigate(xaml_typename<ExpartsV4::MainPage>(), box_value(e.Arguments()));
                 std::shared_ptr<CoreApplicationView> app = std::make_shared<CoreApplicationView>(CoreApplication::GetCurrentView());
-                std::shared_ptr<CoreApplicationViewTitleBar> titleBar = std::make_shared<CoreApplicationViewTitleBar>(app->TitleBar());
-                titleBar->ExtendViewIntoTitleBar(true);
+                std::shared_ptr<CoreApplicationViewTitleBar> coreTitleBar = std::make_shared<CoreApplicationViewTitleBar>(app->TitleBar());
+                coreTitleBar->ExtendViewIntoTitleBar(true);
+                coreTitleBar->IsVisibleChanged({this , &App::OnVisibleChanged});
+                coreTitleBar->LayoutMetricsChanged({this, &App::OnLayoutMetricsChanged});
                 
+                std::shared_ptr<ApplicationViewTitleBar> appView = std::make_shared<ApplicationViewTitleBar>(ApplicationView::GetForCurrentView().TitleBar());
+                appView->ButtonBackgroundColor(Windows::UI::Colors::Transparent());
+                appView->ButtonForegroundColor(Windows::UI::Colors::White());
+                
+
             }
             // Place the frame in the current Window
             Window::Current().Content(rootFrame);
@@ -124,4 +130,15 @@ void App::OnSuspending([[maybe_unused]] IInspectable const& sender, [[maybe_unus
 void App::OnNavigationFailed(IInspectable const&, NavigationFailedEventArgs const& e)
 {
     throw hresult_error(E_FAIL, hstring(L"Failed to load Page ") + e.SourcePageType().Name);
+}
+
+void App::OnVisibleChanged(Windows::ApplicationModel::Core::CoreApplicationViewTitleBar sender, IInspectable const&)
+{
+    OutputDebugString(L"yeah it works");
+
+}
+
+void App::OnLayoutMetricsChanged(Windows::ApplicationModel::Core::CoreApplicationViewTitleBar sender, IInspectable const&)
+{
+    OutputDebugString(L"yeah it works");
 }
