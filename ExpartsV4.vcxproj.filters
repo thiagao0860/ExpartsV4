@@ -19,10 +19,12 @@
     <ClCompile Include="MainPage.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
     <ClCompile Include="BaseLayout\StandardNotify.cpp" />
+    <ClCompile Include="BaseLayout\StandardDialog.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="BaseLayout\StandardNotify.h" />
+    <ClInclude Include="BaseLayout\StandardDialog.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">

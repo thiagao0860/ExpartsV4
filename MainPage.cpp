@@ -3,6 +3,7 @@
 #include "MainPage.g.cpp"
 #include "BaseLayout/TitleBar.h"
 #include "BaseLayout/StandardNotify.h"
+#include "BaseLayout/StandardDialog.h"
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;
@@ -23,7 +24,8 @@ namespace winrt::ExpartsV4::implementation
 void winrt::ExpartsV4::implementation::MainPage::NavView_ItemInvoked(winrt::Windows::UI::Xaml::Controls::NavigationView const& sender, winrt::Windows::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const& args)
 {
      if (args.IsSettingsInvoked()) {
-         StandardNotify(L"Settings", L"Settings Selected").Show();
+         StandardDialog(L"o pai deita", L"deitei").Show();
+         //StandardNotify(L"Settings", L"Settings Selected").Show();
          return;
      }
      winrt::hstring invoked_string  =  args.InvokedItemContainer().Name();

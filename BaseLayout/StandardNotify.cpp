@@ -1,3 +1,4 @@
+#pragma once
 #include "pch.h"
 #include "StandardNotify.h"
 
@@ -30,7 +31,7 @@ StandardNotify::StandardNotify(hstring title ,hstring message)
 
 StandardNotify::StandardNotify(XmlDocument messageDocument)
 {
-	this->not = make_shared<ToastNotification>(ToastNotification{messageDocument});
+	this->not = make_shared<ToastNotification>(ToastNotification(messageDocument));
 }
 
 void StandardNotify::Show()
