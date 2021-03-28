@@ -120,6 +120,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BaseLayout\StandardNotify.h" />
     <ClInclude Include="BaseLayout\TitleBar.h">
       <DependentUpon>BaseLayout\TitleBar.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -201,6 +202,7 @@
     <Image Include="Assets\Wide310x150Logo.scale-400.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BaseLayout\StandardNotify.cpp" />
     <ClCompile Include="BaseLayout\TitleBar.cpp">
       <DependentUpon>BaseLayout\TitleBar.xaml</DependentUpon>
       <SubType>Code</SubType>

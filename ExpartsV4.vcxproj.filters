@@ -18,9 +18,11 @@
     <ClCompile Include="App.cpp" />
     <ClCompile Include="MainPage.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="BaseLayout\StandardNotify.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="BaseLayout\StandardNotify.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">

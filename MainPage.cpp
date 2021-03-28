@@ -2,6 +2,7 @@
 #include "MainPage.h"
 #include "MainPage.g.cpp"
 #include "BaseLayout/TitleBar.h"
+#include "BaseLayout/StandardNotify.h"
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;
@@ -21,21 +22,22 @@ namespace winrt::ExpartsV4::implementation
 
 void winrt::ExpartsV4::implementation::MainPage::NavView_ItemInvoked(winrt::Windows::UI::Xaml::Controls::NavigationView const& sender, winrt::Windows::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const& args)
 {
+     if (args.IsSettingsInvoked()) {
+         StandardNotify(L"Settings", L"Settings Selected").Show();
+         return;
+     }
      winrt::hstring invoked_string  =  args.InvokedItemContainer().Name();
      auto foundItem = this->navItems.find(invoked_string);
-     XmlDocument doc;
      switch (foundItem->second)
      {
      case HOME:
-         doc.LoadXml(L"<toast>\
-            </toast>");
-         ToastNotificationManager::CreateToastNotifier().Show(ToastNotification{doc});
+         StandardNotify(L"Homepage Loaded",L"Homepage under construction").Show();
          break;
      case MONITOR:
-         OutputDebugString(L"pegou");
+         StandardNotify(L"Monitor Loaded", L"Real time monitor under construction").Show();
          break;
      default:
-
+         OutputDebugString(L"Inconsistent NavView_ItemInvoked call");
          break;
      }
 }
