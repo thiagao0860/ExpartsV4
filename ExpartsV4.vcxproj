@@ -112,7 +112,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
     <ClCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(GeneratedFilesDir)\BaseLayout;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(GeneratedFilesDir)\StaticResources;$(GeneratedFilesDir)\ContentPage;$(GeneratedFilesDir)\BaseLayout;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -124,6 +124,14 @@
     <ClInclude Include="BaseLayout\StandardNotify.h" />
     <ClInclude Include="BaseLayout\TitleBar.h">
       <DependentUpon>BaseLayout\TitleBar.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="ContentPage\HomePage.h">
+      <DependentUpon>ContentPage\HomePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="ContentPage\MonitorRTPage.h">
+      <DependentUpon>ContentPage\MonitorRTPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
     <ClInclude Include="pch.h" />
@@ -141,8 +149,17 @@
     <Page Include="BaseLayout\TitleBar.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ContentPage\HomePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ContentPage\MonitorRTPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StaticResources\Colors.xaml">
+      <DeploymentContent>true</DeploymentContent>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -201,12 +218,23 @@
     <Image Include="Assets\Wide310x150Logo.scale-150.png" />
     <Image Include="Assets\Wide310x150Logo.scale-200.png" />
     <Image Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Image Include="PreparedImages\main-icon-dark.png" />
+    <Image Include="PreparedImages\main-icon-light.png" />
+    <Image Include="PreparedImages\under-construction.png" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseLayout\StandardDialog.cpp" />
     <ClCompile Include="BaseLayout\StandardNotify.cpp" />
     <ClCompile Include="BaseLayout\TitleBar.cpp">
       <DependentUpon>BaseLayout\TitleBar.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
+    <ClCompile Include="ContentPage\HomePage.cpp">
+      <DependentUpon>ContentPage\HomePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
+    <ClCompile Include="ContentPage\MonitorRTPage.cpp">
+      <DependentUpon>ContentPage\MonitorRTPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
     <ClCompile Include="pch.cpp">
@@ -228,12 +256,22 @@
       <DependentUpon>BaseLayout\TitleBar.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Midl>
+    <Midl Include="ContentPage\HomePage.idl">
+      <DependentUpon>ContentPage\HomePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="ContentPage\MonitorRTPage.idl">
+      <DependentUpon>ContentPage\MonitorRTPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
     <Midl Include="MainPage.idl">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Midl>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="PreparedImages\main-icon-dark.svg" />
+    <None Include="PreparedImages\main-icon-light.svg" />
     <None Include="PropertySheet.props" />
     <Text Include="readme.txt">
       <DeploymentContent>false</DeploymentContent>

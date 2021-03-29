@@ -13,6 +13,13 @@ StandardDialog::StandardDialog(hstring title, hstring message)
 	this->dialog->CloseButtonText(L"OK");
 }
 
+StandardDialog::StandardDialog(winrt::Windows::UI::Xaml::Controls::ContentControl ContentControl)
+{
+	this->dialog = std::make_shared<ContentDialog>(ContentDialog());
+	this->dialog->Content(ContentControl);
+	this->dialog->CloseButtonText(L"OK");
+}
+
 void StandardDialog::Show()
 {
 	this->dialog->ShowAsync();
