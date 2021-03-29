@@ -8,6 +8,9 @@
     <Page Include="BaseLayout\TitleBar.xaml">
       <Filter>BaseLayout</Filter>
     </Page>
+    <Page Include="ContentPage\HomePage.xaml" />
+    <Page Include="ContentPage\MonitorRTPage.xaml" />
+    <Page Include="StaticResources\Colors.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />
@@ -177,6 +180,9 @@
     <Image Include="Assets\StoreLogo.scale-400.png">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="PreparedImages\under-construction.png" />
+    <Image Include="PreparedImages\main-icon-light.png" />
+    <Image Include="PreparedImages\main-icon-dark.png" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
@@ -195,6 +201,8 @@
   <ItemGroup>
     <None Include="PropertySheet.props" />
     <None Include="packages.config" />
+    <None Include="PreparedImages\main-icon-light.svg" />
+    <None Include="PreparedImages\main-icon-dark.svg" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />

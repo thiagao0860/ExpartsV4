@@ -1,0 +1,8 @@
+namespace ExpartsV4
+{
+    [default_interface]
+    runtimeclass MonitorRTPage : Windows.UI.Xaml.Controls.Page
+    {
+        MonitorRTPage();
+    }
+}
