@@ -141,6 +141,7 @@
     <ClInclude Include="MainPage.h">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="ResourceLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -159,6 +160,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="StaticResources\Colors.xaml">
+      <DeploymentContent>true</DeploymentContent>
+    </Page>
+    <Page Include="StaticResources\Strings.xaml">
+      <DeploymentContent>true</DeploymentContent>
+    </Page>
+    <Page Include="StaticResources\Styles.xaml">
       <DeploymentContent>true</DeploymentContent>
     </Page>
   </ItemGroup>
@@ -247,6 +254,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="ResourceLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl">
