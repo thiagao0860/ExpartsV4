@@ -8,6 +8,7 @@
 using namespace winrt;
 using namespace Windows::UI::Xaml;
 using namespace Windows::Foundation;
+using namespace Windows::Foundation;
 
 namespace winrt::ExpartsV4::implementation
 {
@@ -29,5 +30,13 @@ namespace winrt::ExpartsV4::implementation
     void MonitorRTPage::StartLearningButton_onClick(IInspectable const& sender, RoutedEventArgs const& args)
     {
         OutputDebugString(L"Start Learning Button Click\n");
+    }
+    void MonitorRTPage::sliderMinSensitiveCutOff_onVAlueChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs const& args)
+    {
+        OutputDebugString((to_hstring(args.NewValue()) + to_hstring(" to ") + to_hstring(args.NewValue()) + to_hstring(" \n")).c_str());
+    }
+    void MonitorRTPage::sliderMaxSensitiveCutOff_onVAlueChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs const& args)
+    {
+        OutputDebugString((to_hstring(args.NewValue()) +to_hstring(" to ")+ to_hstring(args.NewValue()) +to_hstring(" \n")).c_str());
     }
 }

@@ -16,6 +16,12 @@ namespace winrt::ExpartsV4::implementation
         void StartLearningButton_onClick(
             winrt::Windows::Foundation::IInspectable const& sender,
             winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+        void sliderMinSensitiveCutOff_onVAlueChanged(
+            winrt::Windows::Foundation::IInspectable const& sender,
+            winrt::Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs const& args);
+        void sliderMaxSensitiveCutOff_onVAlueChanged(
+            winrt::Windows::Foundation::IInspectable const& sender,
+            winrt::Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs const& args);
 
     };
 }
