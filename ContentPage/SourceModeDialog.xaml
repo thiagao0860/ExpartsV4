@@ -1,0 +1,49 @@
+﻿<ContentDialog
+    x:Class="ExpartsV4.SourceModeDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExpartsV4"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Title="CONECTOR SELECTOR"
+    PrimaryButtonText="Conect"  
+    CloseButtonText="Cancel"
+    PrimaryButtonClick="PrimaryButton_onClick"
+    >
+
+    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <TextBlock Name="body"  TextWrapping="Wrap">
+            <TextBlock.Text>
+                select the required conection model for camera learning.
+            </TextBlock.Text>
+        </TextBlock>
+        <TextBlock/>
+        <CheckBox Name="conectByIPCheckBox" Content="Conect  By IP" Checked="ConIP_onChecked"/>
+        <StackPanel>
+            <TextBox IsEnabled="False" Name="vIPAdress" Header="IP Adress"/>
+        </StackPanel>
+        <CheckBox Name="localDeviceCheckBox" Content="Local device" Checked="ConLocal_onChecked"/>
+        <CheckBox Name="serialConectionCheckBox" Content="Serial Conection" Checked="ConSerial_onChecked"/>
+        <StackPanel >
+            <TextBox IsEnabled="False" Name="serialPort" Header="Serial Port"/>
+            <TextBox IsEnabled="False"  Name="serialBitRate" Header="Bit Rate"/>
+        </StackPanel>
+        <CheckBox Name="videoStreamConectionCheckBox" Content="Conect to a Local Video" Checked="ConLocalStream_onChecked"/>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox IsEnabled="False" Grid.Column="0" Grid.RowSpan="2" Text="PATH..."></TextBox>
+            <Button IsEnabled="False" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top" >Browse</Button>
+        </Grid>
+        <TextBlock x:Name="errorTextBlock" />
+    </StackPanel>
+
+</ContentDialog>

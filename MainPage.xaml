@@ -8,13 +8,14 @@
     mc:Ignorable="d">
 
     <Grid>
-        <NavigationView x:Name="NavView" Background="Transparent" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked" Loaded="NavView_Loaded">
+        <NavigationView x:Name="NavView" Background="Transparent"  
+                        IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked" Loaded="NavView_Loaded">
 
-            <NavigationView.MenuItems>
-                <NavigationViewItem x:Name="home_navigation" Icon="Home">
+            <NavigationView.MenuItems >
+                <NavigationViewItem x:Name="home_navigation" Icon="Home" IsSelected="True">
                     Home
                 </NavigationViewItem>
-                <NavigationViewItem x:Name="monitor_navigation" Icon="Manage">
+                <NavigationViewItem  x:Name="monitor_navigation" Icon="Manage" >
                     Monitor Real Time
                 </NavigationViewItem>
             </NavigationView.MenuItems>

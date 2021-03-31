@@ -78,8 +78,8 @@
                             </Viewbox>
                         </Button>
                     </Grid>
-                    <Slider x:Name="sliderMinSensitiveCutOff" Margin="20,0" Header="Min Sensitive CutOff:" Value="15" Maximum="100"  />
-                    <Slider x:Name="sliderMaxSensitiveCutOff" Margin="20,0" Header="Max Sensitive CutOff:" Value="45" Maximum="100"  />
+                    <Slider x:Name="sliderMinSensitiveCutOff" Margin="20,0" Header="Min Sensitive CutOff:" ValueChanged="sliderMinSensitiveCutOff_onVAlueChanged" Value="15" Maximum="100"  />
+                    <Slider x:Name="sliderMaxSensitiveCutOff" Margin="20,0" Header="Max Sensitive CutOff:" ValueChanged="sliderMaxSensitiveCutOff_onVAlueChanged" Value="45" Maximum="100"  />
 
                 </StackPanel>
             </ScrollViewer>
