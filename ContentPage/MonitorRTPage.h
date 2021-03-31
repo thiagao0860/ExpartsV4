@@ -6,6 +6,7 @@ namespace winrt::ExpartsV4::implementation
 {
     struct MonitorRTPage : MonitorRTPageT<MonitorRTPage>
     {
+    public:
         MonitorRTPage();
         void SearchButton_onClick(
             winrt::Windows::Foundation::IInspectable const& sender,
@@ -22,7 +23,10 @@ namespace winrt::ExpartsV4::implementation
         void sliderMaxSensitiveCutOff_onVAlueChanged(
             winrt::Windows::Foundation::IInspectable const& sender,
             winrt::Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs const& args);
-
+    private:
+        void DerivedContentDialog_onClose(
+            winrt::Windows::UI::Xaml::Controls::ContentDialog const& sender, 
+            winrt::Windows::UI::Xaml::Controls::ContentDialogClosedEventArgs const& args);
     };
 }
 

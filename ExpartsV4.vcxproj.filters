@@ -13,6 +13,7 @@
     <Page Include="StaticResources\Colors.xaml" />
     <Page Include="StaticResources\Strings.xaml" />
     <Page Include="StaticResources\Styles.xaml" />
+    <Page Include="ContentPage\SourceModeDialog.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />

@@ -1,0 +1,10 @@
+namespace ExpartsV4
+{
+    [default_interface]
+    runtimeclass SourceModeDialog : Windows.UI.Xaml.Controls.ContentDialog
+    {
+        SourceModeDialog();
+        Int16 SelectedMode;
+        String ConnectionArgs;
+    }
+}
