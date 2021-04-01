@@ -5,11 +5,20 @@
 #include "winrt/Windows.UI.Xaml.Interop.h"
 #include "winrt/Windows.UI.Xaml.Controls.Primitives.h"
 #include "SourceModeDialog.g.h"
+#include <basetsd.h>
 
 namespace winrt::ExpartsV4::implementation
 {
     struct SourceModeDialog : SourceModeDialogT<SourceModeDialog>
     {
+        enum ConnectionModeOPTs
+        {
+            NULL_CONNECTION = 0,
+            IP_CONNECTION = 1,
+            LOCAL_CONNECTION = 2,
+            SERIAL_CONNECTION = 3,
+            VIDEO_STREAM_CONNECTION = 4
+        };
         SourceModeDialog();
     public:
         void PrimaryButton_onClick(
@@ -33,6 +42,14 @@ namespace winrt::ExpartsV4::implementation
         winrt::hstring ConnectionArgs();
 
     private:
+        INT16 selectedMode = NULL_CONNECTION;
+        winrt::hstring connectionArgs;
+        void setModeSelected_uniqueAssert(int mode);
+        void commitChangesNull();
+        void commitChangesIPCon();
+        void commitChangesLocalCon();
+        void commitChangesSerialCon();
+        void commitChangesVideoStreamCon();
     };
 }
 

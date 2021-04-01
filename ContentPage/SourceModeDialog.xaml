@@ -14,23 +14,23 @@
     >
 
     <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-        <TextBlock Name="body"  TextWrapping="Wrap">
+        <TextBlock x:Name="body"  TextWrapping="Wrap">
             <TextBlock.Text>
                 select the required conection model for camera learning.
             </TextBlock.Text>
         </TextBlock>
         <TextBlock/>
-        <CheckBox Name="conectByIPCheckBox" Content="Conect  By IP" Checked="ConIP_onChecked"/>
+        <CheckBox x:Name="conectByIPCheckBox" Content="Conect  By IP" Checked="ConIP_onChecked"/>
         <StackPanel>
-            <TextBox IsEnabled="False" Name="vIPAdress" Header="IP Adress"/>
+            <TextBox IsEnabled="False" x:Name="vIPAdress" Header="IP Adress"/>
         </StackPanel>
-        <CheckBox Name="localDeviceCheckBox" Content="Local device" Checked="ConLocal_onChecked"/>
-        <CheckBox Name="serialConectionCheckBox" Content="Serial Conection" Checked="ConSerial_onChecked"/>
+        <CheckBox x:Name="localDeviceCheckBox" Content="Local device" Checked="ConLocal_onChecked"/>
+        <CheckBox x:Name="serialConectionCheckBox" Content="Serial Conection" Checked="ConSerial_onChecked"/>
         <StackPanel >
-            <TextBox IsEnabled="False" Name="serialPort" Header="Serial Port"/>
-            <TextBox IsEnabled="False"  Name="serialBitRate" Header="Bit Rate"/>
+            <TextBox IsEnabled="False" x:Name="serialPort" Header="Serial Port"/>
+            <TextBox IsEnabled="False"  x:Name="serialBitRate" Header="Bit Rate"/>
         </StackPanel>
-        <CheckBox Name="videoStreamConectionCheckBox" Content="Conect to a Local Video" Checked="ConLocalStream_onChecked"/>
+        <CheckBox x:Name="videoStreamConectionCheckBox" Content="Conect to a Local Video" Checked="ConLocalStream_onChecked"/>
         <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -40,8 +40,8 @@
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <TextBox IsEnabled="False" Grid.Column="0" Grid.RowSpan="2" Text="PATH..."></TextBox>
-            <Button IsEnabled="False" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top" >Browse</Button>
+            <TextBox x:Name="vPath" IsEnabled="False" Grid.Column="0" Grid.RowSpan="2" Text="PATH..."></TextBox>
+            <Button x:Name="vPathButton" IsEnabled="False" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top" >Browse</Button>
         </Grid>
         <TextBlock x:Name="errorTextBlock" />
     </StackPanel>
