@@ -11,14 +11,6 @@ namespace winrt::ExpartsV4::implementation
 {
     struct SourceModeDialog : SourceModeDialogT<SourceModeDialog>
     {
-        enum ConnectionModeOPTs
-        {
-            NULL_CONNECTION = 0,
-            IP_CONNECTION = 1,
-            LOCAL_CONNECTION = 2,
-            SERIAL_CONNECTION = 3,
-            VIDEO_STREAM_CONNECTION = 4
-        };
         SourceModeDialog();
     public:
         void PrimaryButton_onClick(
@@ -40,9 +32,9 @@ namespace winrt::ExpartsV4::implementation
         INT16 SelectedMode();
         void ConnectionArgs(winrt::hstring value);
         winrt::hstring ConnectionArgs();
-
+        
     private:
-        INT16 selectedMode = NULL_CONNECTION;
+        INT16 selectedMode = (INT16)ConnectionModeOPTs::NULL_CONNECTION;
         winrt::hstring connectionArgs;
         void setModeSelected_uniqueAssert(int mode);
         void commitChangesNull();

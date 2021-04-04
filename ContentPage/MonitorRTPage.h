@@ -27,6 +27,8 @@ namespace winrt::ExpartsV4::implementation
         void DerivedContentDialog_onClose(
             winrt::Windows::UI::Xaml::Controls::ContentDialog const& sender, 
             winrt::Windows::UI::Xaml::Controls::ContentDialogClosedEventArgs const& args);
+        
+        void putConsoleMessage(winrt::hstring message);
     };
 }
 

@@ -7,6 +7,7 @@
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;
+using namespace Windows::UI::Xaml::Controls;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation;
 using namespace std;
@@ -20,9 +21,9 @@ namespace winrt::ExpartsV4::implementation
     
     void MonitorRTPage::SearchButton_onClick(IInspectable const& sender, RoutedEventArgs const& args)
     {
-        shared_ptr<SourceModeDialog> dialog  = make_shared<SourceModeDialog>(SourceModeDialog());
-        dialog->Closed({this , &MonitorRTPage::DerivedContentDialog_onClose });
-        dialog->ShowAsync();
+        SourceModeDialog dialog { make<SourceModeDialog>()};
+        dialog.Closed({this , &MonitorRTPage::DerivedContentDialog_onClose });
+        dialog.ShowAsync();
     }
 
     void MonitorRTPage::RefreshButton_onClick(IInspectable const& sender, RoutedEventArgs const& args)
@@ -46,7 +47,20 @@ namespace winrt::ExpartsV4::implementation
     void MonitorRTPage::DerivedContentDialog_onClose(winrt::Windows::UI::Xaml::Controls::ContentDialog const& sender, winrt::Windows::UI::Xaml::Controls::ContentDialogClosedEventArgs const& args)
     {
         SourceModeDialog dialog = (sender.try_as<SourceModeDialog>());
-        OutputDebugString(dialog.ConnectionArgs().c_str());
-        
+        switch (dialog.SelectedMode())
+        {
+        case ConnectionModeOPTs::LOCAL_CONNECTION:
+
+            break;
+        default:
+            break;
+        }
     }
+
+    void MonitorRTPage::putConsoleMessage(winrt::hstring message)
+    {
+        TextBlock text{ make<TextBlock>(message)};
+        this->StackPanelConsole().Children().Append(text);
+    }
+
 }

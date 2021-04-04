@@ -1,5 +1,13 @@
 namespace ExpartsV4
 {
+    enum ConnectionModeOPTs
+    {
+        NULL_CONNECTION = 0,
+        IP_CONNECTION = 1,
+        LOCAL_CONNECTION = 2,
+        SERIAL_CONNECTION = 3,
+        VIDEO_STREAM_CONNECTION = 4
+    };
     [default_interface]
     runtimeclass MonitorRTPage : Windows.UI.Xaml.Controls.Page
     {
