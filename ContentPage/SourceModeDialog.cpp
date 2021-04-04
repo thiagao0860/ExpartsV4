@@ -22,22 +22,22 @@ namespace winrt::ExpartsV4::implementation
 #pragma region on_checked connection opts listener
     void SourceModeDialog::ConIP_onChecked(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args)
     {
-        this->setModeSelected_uniqueAssert(SourceModeDialog::ConnectionModeOPTs::IP_CONNECTION);
+        this->setModeSelected_uniqueAssert((INT16)ConnectionModeOPTs::IP_CONNECTION);
     }
 
     void SourceModeDialog::ConLocal_onChecked(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args)
     {
-        this->setModeSelected_uniqueAssert(SourceModeDialog::ConnectionModeOPTs::LOCAL_CONNECTION);
+        this->setModeSelected_uniqueAssert((INT16)ConnectionModeOPTs::LOCAL_CONNECTION);
     }
 
     void SourceModeDialog::ConSerial_onChecked(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args)
     {
-        this->setModeSelected_uniqueAssert(SourceModeDialog::ConnectionModeOPTs::SERIAL_CONNECTION);
+        this->setModeSelected_uniqueAssert((INT16)ConnectionModeOPTs::SERIAL_CONNECTION);
     }
 
     void SourceModeDialog::ConLocalStream_onChecked(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args)
     {
-        this->setModeSelected_uniqueAssert(SourceModeDialog::ConnectionModeOPTs::VIDEO_STREAM_CONNECTION);
+        this->setModeSelected_uniqueAssert((INT16)ConnectionModeOPTs::VIDEO_STREAM_CONNECTION);
     }
 #pragma endregion
 
@@ -66,16 +66,16 @@ namespace winrt::ExpartsV4::implementation
     {
         switch (mode)
         {
-        case SourceModeDialog::ConnectionModeOPTs::IP_CONNECTION:
+        case (INT16)ConnectionModeOPTs::IP_CONNECTION:
             this->commitChangesIPCon();
             break;
-        case SourceModeDialog::ConnectionModeOPTs::LOCAL_CONNECTION:
+        case (INT16)ConnectionModeOPTs::LOCAL_CONNECTION:
             this->commitChangesLocalCon();
             break;
-        case SourceModeDialog::ConnectionModeOPTs::SERIAL_CONNECTION:
+        case (INT16)ConnectionModeOPTs::SERIAL_CONNECTION:
             this->commitChangesSerialCon();
             break;
-        case SourceModeDialog::ConnectionModeOPTs::VIDEO_STREAM_CONNECTION:
+        case (INT16)ConnectionModeOPTs::VIDEO_STREAM_CONNECTION:
             this->commitChangesVideoStreamCon();
             break;
         default:
