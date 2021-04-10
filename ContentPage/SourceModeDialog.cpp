@@ -6,6 +6,10 @@
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;
+using namespace Windows::UI::Xaml::Controls;
+using namespace Windows::Storage::Pickers;
+using namespace Windows::Storage;
+using namespace Windows::Foundation;
 
 namespace winrt::ExpartsV4::implementation
 {
@@ -16,7 +20,21 @@ namespace winrt::ExpartsV4::implementation
 
     void SourceModeDialog::PrimaryButton_onClick(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs const& args)
     {
+        
+    }
 
+    void SourceModeDialog::PathButton_onClick(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& args)
+    {
+        this->filePickerTask(vPath());
+    }
+
+    IAsyncAction SourceModeDialog::filePickerTask(TextBox box)
+    {
+       FileOpenPicker picker;
+       picker.FileTypeFilter().Append(L".mp4");
+       StorageFile file = co_await picker.PickSingleFileAsync();  
+       box.Text(file.Path());
+       co_return;
     }
 
 #pragma region on_checked connection opts listener
@@ -39,6 +57,7 @@ namespace winrt::ExpartsV4::implementation
     {
         this->setModeSelected_uniqueAssert((INT16)ConnectionModeOPTs::VIDEO_STREAM_CONNECTION);
     }
+
 #pragma endregion
 
     void SourceModeDialog::SelectedMode(INT16 value)
@@ -162,9 +181,10 @@ namespace winrt::ExpartsV4::implementation
         this->serialBitRate().IsEnabled(false);
 
         this->videoStreamConectionCheckBox().IsChecked(true);
-        this->vPath().IsEnabled(true);
+        this->vPath().IsEnabled(false);
         this->vPathButton().IsEnabled(true);
     }
+
 
 #pragma endregion
 
