@@ -27,12 +27,19 @@
     <ClCompile Include="BaseLayout\StandardNotify.cpp" />
     <ClCompile Include="BaseLayout\StandardDialog.cpp" />
     <ClCompile Include="ResourceLoader.cpp" />
+    <ClCompile Include="GlobalTools\StaticMethods.cpp" />
+    <ClCompile Include="MachineResources\CameraHelper.cpp" />
+    <ClCompile Include="MachineResources\VideoStreamHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="BaseLayout\StandardNotify.h" />
     <ClInclude Include="BaseLayout\StandardDialog.h" />
     <ClInclude Include="ResourceLoader.h" />
+    <ClInclude Include="GlobalTools\StaticMethods.h" />
+    <ClInclude Include="MachineResources\CameraHelper.h" />
+    <ClInclude Include="MachineResources\Monitor.h" />
+    <ClInclude Include="MachineResources\VideoStreamHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">

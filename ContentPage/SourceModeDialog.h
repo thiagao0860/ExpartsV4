@@ -6,6 +6,7 @@
 #include "winrt/Windows.UI.Xaml.Controls.Primitives.h"
 #include "SourceModeDialog.g.h"
 #include <basetsd.h>
+#include <pplawait.h>
 
 namespace winrt::ExpartsV4::implementation
 {
@@ -28,6 +29,9 @@ namespace winrt::ExpartsV4::implementation
         void ConLocalStream_onChecked(
             winrt::Windows::Foundation::IInspectable const& sender,
             winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+        void PathButton_onClick(
+            winrt::Windows::Foundation::IInspectable const& sender,
+            winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
         void SelectedMode(INT16 value);
         INT16 SelectedMode();
         void ConnectionArgs(winrt::hstring value);
@@ -42,6 +46,7 @@ namespace winrt::ExpartsV4::implementation
         void commitChangesLocalCon();
         void commitChangesSerialCon();
         void commitChangesVideoStreamCon();
+        winrt::Windows::Foundation::IAsyncAction filePickerTask(winrt::Windows::UI::Xaml::Controls::TextBox textBox);
     };
 }
 

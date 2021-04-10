@@ -95,7 +95,7 @@
       <WarningLevel>Level4</WarningLevel>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <!--Temporarily disable cppwinrt heap enforcement to work around xaml compiler generated std::shared_ptr use -->
-      <AdditionalOptions Condition="'$(CppWinRTHeapEnforcement)'==''">/DWINRT_NO_MAKE_DETECTION %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(CppWinRTHeapEnforcement)'==''">/DWINRT_NO_MAKE_DETECTION /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
       <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;WINRT_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -112,7 +112,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
     <ClCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(GeneratedFilesDir)\StaticResources;$(GeneratedFilesDir)\ContentPage;$(GeneratedFilesDir)\BaseLayout;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(GeneratedFilesDir)\MachineResources;$(GeneratedFilesDir)\CoreApplication;$(GeneratedFilesDir)\GlobalTools;$(GeneratedFilesDir)\StaticResources;$(GeneratedFilesDir)\ContentPage;$(GeneratedFilesDir)\BaseLayout;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -126,6 +126,7 @@
       <DependentUpon>BaseLayout\TitleBar.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="MachineResources\CameraHelper.h" />
     <ClInclude Include="ContentPage\HomePage.h">
       <DependentUpon>ContentPage\HomePage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -138,6 +139,8 @@
       <DependentUpon>ContentPage\SourceModeDialog.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="MachineResources\Monitor.h" />
+    <ClInclude Include="MachineResources\VideoStreamHelper.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.h">
       <DependentUpon>App.xaml</DependentUpon>
@@ -146,6 +149,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="ResourceLoader.h" />
+    <ClInclude Include="GlobalTools\StaticMethods.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -243,6 +247,7 @@
       <DependentUpon>BaseLayout\TitleBar.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="MachineResources\CameraHelper.cpp" />
     <ClCompile Include="ContentPage\HomePage.cpp">
       <DependentUpon>ContentPage\HomePage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -266,6 +271,8 @@
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
     <ClCompile Include="ResourceLoader.cpp" />
+    <ClCompile Include="GlobalTools\StaticMethods.cpp" />
+    <ClCompile Include="MachineResources\VideoStreamHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl">

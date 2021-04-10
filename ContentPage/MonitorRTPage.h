@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "MonitorRTPage.g.h"
+#include "MachineResources/Monitor.h"
 
 namespace winrt::ExpartsV4::implementation
 {
@@ -24,6 +25,8 @@ namespace winrt::ExpartsV4::implementation
             winrt::Windows::Foundation::IInspectable const& sender,
             winrt::Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs const& args);
     private:
+        std::shared_ptr<Monitor> hostFrameHandler;
+
         void DerivedContentDialog_onClose(
             winrt::Windows::UI::Xaml::Controls::ContentDialog const& sender, 
             winrt::Windows::UI::Xaml::Controls::ContentDialogClosedEventArgs const& args);

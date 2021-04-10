@@ -16,4 +16,7 @@
     <PackageLogoSource>C:\Users\Thiago\source\repos\ExpartsV4\ExpartsV4\PreparedImages\main-icon-dark.png</PackageLogoSource>
     <BadgeLogoSource>C:\Users\Thiago\source\repos\ExpartsV4\ExpartsV4\PreparedImages\main-icon-dark.png</BadgeLogoSource>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerType>NativeWithManagedCore</DebuggerType>
+  </PropertyGroup>
 </Project>

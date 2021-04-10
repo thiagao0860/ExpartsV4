@@ -19,3 +19,7 @@
 #include <winrt/Windows.UI.Notifications.Management.h>
 #include <winrt/Windows.ApplicationModel.Core.h>
 #include <winrt/Windows.Data.Xml.Dom.h>
+#include <winrt/Windows.Globalization.h>
+#include <winrt/Windows.Globalization.DateTimeFormatting.h>
+#include <winrt/Windows.Storage.Pickers.h>
+#include <winrt/Windows.Storage.h>
