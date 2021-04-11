@@ -7,6 +7,7 @@
 #include "GlobalTools/StaticMethods.h"
 #include "MachineResources/CameraHelper.h"
 #include "MachineResources/VideoStreamHelper.h"
+#include <Windows.h>
 
 using namespace winrt;
 using namespace Windows::UI::Xaml;
@@ -37,7 +38,17 @@ namespace winrt::ExpartsV4::implementation
 
     void MonitorRTPage::StartLearningButton_onClick(IInspectable const& sender, RoutedEventArgs const& args)
     {
-        putConsoleMessage(StaticMethods::getTimeStampH() +L": Start Learning Button Click");
+        auto dontThreadOnMe = [](LPVOID data) -> DWORD {
+            for (int i = 0; i < 10; i++) {
+                *(int*)data = i;
+            }
+            return 0;
+        };
+        int number = 42;
+        auto thread = CreateThread(nullptr, 0, dontThreadOnMe, &number, 0, nullptr);
+        for (int i = 0; i <20; i++) {
+            putConsoleMessage(StaticMethods::getTimeStampH() + L": Start Learning Button Click " + to_wstring(number));
+        }
     }
     void MonitorRTPage::sliderMinSensitiveCutOff_onVAlueChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs const& args)
     {
